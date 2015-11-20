@@ -33,10 +33,10 @@ public class assignee_validator implements Validator {
 
 		IssueManager issueManager = ComponentAccessor.getIssueManager();
 		String assignee_old = issueManager.getIssueObject(issue.getId())
-				.getAssignee().getName();
-		String assignee_new = issue.getAssignee().getName();
+				.getAssigneeId();
+		String assignee_new = issue.getAssigneeId();
 		if (assignee_new.equalsIgnoreCase(assignee_old))
 			throw new InvalidInputException(
-					"Исполнитель задачи не может остаться неизменным!");
+					"РСЃРїРѕР»РЅРёС‚РµР»СЊ Р·Р°РґР°С‡Рё РЅРµ РјРѕР¶РµС‚ РѕСЃС‚Р°С‚СЊСЃСЏ РЅРµРёР·РјРµРЅРЅС‹Рј!");
 	}
 }
